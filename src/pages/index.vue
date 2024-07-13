@@ -1,0 +1,88 @@
+<template>
+  <div>
+    <header class="bg-white shadow">
+      <div class="container mx-auto px-4 py-6">
+        <h1 class="text-3xl font-bold">Mojdeh Mansoori, Ph.D. Student</h1>
+      </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/3">
+            <img
+              :src="profilePhoto"
+              alt="Mojdeh Mansoori"
+              class="rounded-full mx-auto md:mx-0 md:w-full"
+            />
+          </div>
+          <div class="md:w-2/3 md:pl-8">
+            <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+            <p class="mb-4">
+              Mojdeh Mansoori is a dedicated Ph.D. student specializing in
+              orofacial pain and jaw function. With a strong background in
+              general dentistry and oral medicine, she is committed to advancing
+              the field through her research on epigenetic and nutritional risk
+              factors for painful temporomandibular disorders.
+            </p>
+            <a href="research" class="text-blue-500 hover:underline"
+              >Read more about my research</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Current Research</h2>
+        <p>
+          As a Ph.D. student at Aarhus University, Mojdeh Mansoori is focused on
+          exploring the epigenetic and nutritional risk factors for painful
+          temporomandibular disorders. Her research aims to identify potential
+          preventive measures and treatments for these conditions.
+        </p>
+      </div>
+      <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+        <p>
+          Email:
+          <a
+            href="mailto:mojdeh.m@dent.au.dk"
+            class="text-blue-500 hover:underline flex gap-2"
+          >
+            mojdeh.m@dent.au.dk
+          </a>
+        </p>
+        <div class="flex p-8 gap-5">
+          <a
+            href="https://www.linkedin.com/in/mojdeh-mansoori-3a258482/"
+            target="”_blank”"
+          >
+            <img width="32" height="32" :src="linkedin" />
+          </a>
+          <a
+            href="https://www.researchgate.net/profile/Mojdeh-Mansoori"
+            target="”_blank”"
+          >
+            <img width="32" height="32" :src="rgate" />
+          </a>
+          <a href="https://orcid.org/0000-0001-9026-7590" target="”_blank”">
+            <img width="80" height="32" :src="orcid" />
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=AFLXxBMAAAAJ&hl=en"
+            target="”_blank”"
+          >
+            <img width="32" height="32" :src="scholar" />
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script setup lang="ts">
+import profilePhoto from "../assets/images/mojdeh.jpeg"
+import linkedin from "../assets/images/linkedin.png"
+import scholar from "../assets/images/scholar.png"
+import orcid from "../assets/images/orcid.svg"
+import rgate from "../assets/images/rgate.png"
+
+</script>

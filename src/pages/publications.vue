@@ -1,0 +1,56 @@
+<template>
+    <div>
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">Publications</h1>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Selected Publications</h2>
+            <ul class="list-disc list-inside">
+                <li>
+                    Mansoori M., Exposto C.R., Bech B.H., Olsen S.F., Bjerregaard A.A., Diatchenko L., Baad-Hansen L. 
+                    Adolescent dietary quality as a risk factor for painful TMD and headaches in young adults. (in preparation)
+                </li>
+                <li>
+                    Mansoori M., Zarei MR, Chamani G, Nazeri M., Mohamadi F., Alavi SS., Shabani M. 
+                    Chronic migraine caused a higher rate of tendency to cannabinoid agonist compared to morphine: 
+                    Tendency to use cannabis in chronic Migraine. Acta Bio Medica. 2020;91:e2020185. (published)  
+                </li>
+                <li>
+                    Navabi N, Zeynali M, Mansori M, Hashemipour MA, Nassab SA. 
+                    Patients Attitudes' Toward Chairside Medical Screening in a Dental Setting. 
+                    Pesquisa Brasileira em Odontopediatria e Clínica Integrada. 2020;20:4880. (published)  
+                </li>
+                <li>
+                    Raoof M, Soofiabadi S, Abbasnejad M, Kooshki R, Esmaeili‐Mahani S, Mansoori M. 
+                    Activation of orexin 1 receptors in the ventrolateral periaqueductal gray matter (vlPAG) 
+                    modulates pulpal nociception and the induction of substance P in vlPAG and trigeminal nucleus caudalis. 
+                    International endodontic journal. 2019;52:318-28. (published)  
+                </li>
+                <li>
+                    Chamani G, Shakibi MR, Zarei MR, Rad M, Pouyafard A, Parhizkar A, Mansoori M. 
+                    Assessment of relationship between xerostomia and oral health-related quality of life in patients with rheumatoid arthritis. 
+                    Oral Dis. 2017;23:1162-1167 (published)  
+                </li>
+                <li>
+                    Mansori M, Mohseni-Rad L, Haghani J, Hashemipour MA. 
+                    Dental students’ opinions on the challenges and research opportunities: a qualitative research. 
+                    Journal of Oral Health and Oral Epidemiology. 2017;7:8-15. (published)  
+                </li>
+                <li>
+                    Tavakolinejad Z, Hashemipour MA, Shahravan A, Mirzadeh A, Mansori M, 
+                    Gandjalikhan-Nassab SA. Evaluation of referral system to endodontists among a group of general dental practitioners. 
+                    Journal of Oral Health and Oral Epidemiology. 2015;4:17-23. (published)  
+                </li>
+                <li>
+                    Hashemipour M, Mansouri M. 
+                    Investigation of cases and referral patterns of patients to dental specialists by general dentists in 2011 in Kerman, Iran. 
+                    Journal of Isfahan Dental School 2012;8:433-443. (published) 
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+</template>
