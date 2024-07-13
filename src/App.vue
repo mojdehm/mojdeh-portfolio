@@ -16,7 +16,7 @@
             >
               <template v-slot:append>
                 <v-btn
-                  icon="arrow_circle_left"
+                  icon="chevron_left"
                   variant="text"
                   @click.stop="rail = !rail"
                 ></v-btn>
@@ -27,9 +27,9 @@
 
             <v-list density="compact" nav>
               <v-list-item
-              prepend-icon="home"
-              title="Home"
-              @click="push('/')"
+                prepend-icon="home"
+                title="Home"
+                @click="push('/')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="article"
@@ -54,7 +54,7 @@
             </v-list>
           </v-navigation-drawer>
           <v-main class="h-screen overflow-auto bg-gray-100 text-gray-800">
-            <div class="w-[calc(100vw-60px)]">
+            <div @click.stop="rail = true" class="w-[calc(100vw-60px)]">
               <router-view />
             </div>
           </v-main>
