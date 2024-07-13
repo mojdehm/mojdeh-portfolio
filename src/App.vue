@@ -8,14 +8,19 @@
             :rail="rail"
             permanent
             @click="rail = false"
+            rail-width="60"
+            width="220"
           >
             <v-list-item
+              class="pl-4 pt-4"
               :prepend-avatar="profilePhoto"
               title="Mojdeh Mansoori"
               nav
             >
-              <template v-slot:append>
+              <template #append>
                 <v-btn
+                  width="30"
+                  height="30"
                   icon="chevron_left"
                   variant="text"
                   @click.stop="rail = !rail"
@@ -54,7 +59,10 @@
             </v-list>
           </v-navigation-drawer>
           <v-main class="h-screen overflow-auto bg-gray-100 text-gray-800">
-            <div @click.stop="rail = true" class="w-[calc(100vw-60px)]">
+            <div
+              @click.stop="rail = true"
+              class="w-[calc(100vw-60px)] min-h-screen"
+            >
               <router-view />
             </div>
           </v-main>
