@@ -37,14 +37,19 @@
                 @click="push('/')"
               ></v-list-item>
               <v-list-item
-                prepend-icon="article"
+                prepend-icon="publish"
                 title="Publications"
                 @click="push('/publications')"
               ></v-list-item>
               <v-list-item
-                prepend-icon="biotech"
+                prepend-icon="science"
                 title="Research"
                 @click="push('/research')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="co_present"
+                title="Resume"
+                @click="push('/resume')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="person"
@@ -52,7 +57,7 @@
                 @click="push('/about')"
               ></v-list-item>
               <v-list-item
-                prepend-icon="contact_page"
+                prepend-icon="message"
                 title="Contact me"
                 @click="push('/contact')"
               ></v-list-item>
@@ -61,7 +66,7 @@
           <v-main class="h-screen overflow-auto bg-gray-100 text-gray-800">
             <div
               @click.stop="rail = true"
-              class="w-[calc(100vw-60px)] min-h-screen"
+              class="w-[calc(100vw-60px)] md:w-full min-h-screen"
             >
               <router-view />
             </div>
