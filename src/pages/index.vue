@@ -8,7 +8,7 @@
     <main class="container mx-auto px-4 py-8">
       <div class="bg-white rounded-lg shadow-lg p-6">
         <div class="flex flex-col md:flex-row">
-          <div class="md:w-1/3">
+          <div class="md:w-1/3 pb-6 md:pb-0">
             <img
               :src="profilePhoto"
               alt="Mojdeh Mansoori"
@@ -18,7 +18,7 @@
           <div class="md:w-2/3 md:pl-8">
             <h2 class="text-2xl font-bold mb-4">Introduction</h2>
             <p class="mb-4">
-              Mojdeh Mansoori is a dedicated Ph.D. student specializing in
+              Mojdeh is a dedicated Ph.D. student specializing in
               orofacial pain and jaw function. With a strong background in
               general dentistry and oral medicine, she is committed to advancing
               the field through her research on epigenetic and nutritional risk
@@ -33,7 +33,7 @@
       <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-bold mb-4">Current Research</h2>
         <p>
-          As a Ph.D. student at Aarhus University, Mojdeh Mansoori is focused on
+          As a Ph.D. student at Aarhus University, Mojdeh is focused on
           exploring the epigenetic and nutritional risk factors for painful
           temporomandibular disorders. Her research aims to identify potential
           preventive measures and treatments for these conditions.

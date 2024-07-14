@@ -2,14 +2,14 @@
   <div>
     <header class="bg-white shadow">
       <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold">About Mojdeh Mansoori</h1>
+        <h1 class="text-3xl font-bold">About Mojdeh</h1>
       </div>
     </header>
     <main class="container mx-auto px-4 py-8">
       <div class="bg-white rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-bold mb-4">Biography</h2>
         <p>
-          Mojdeh Mansoori is a Ph.D. student at the Section for Orofacial Pain
+          Mojdeh is a Ph.D. student at the Section for Orofacial Pain
           and Jaw Function, Department of Dentistry and Oral Health, Aarhus
           University, Denmark. She obtained her general dentistry qualification
           in 2012 and pursued advanced studies in oral medicine, graduating as

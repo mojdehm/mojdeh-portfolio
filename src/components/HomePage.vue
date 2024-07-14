@@ -18,7 +18,7 @@
           <div class="md:w-2/3 md:pl-8">
             <h2 class="text-2xl font-bold mb-4">Introduction</h2>
             <p class="mb-4">
-              Mojdeh Mansoori is a dedicated Ph.D. student specializing in
+              Mojdeh is a dedicated Ph.D. student specializing in
               orofacial pain and jaw function. With a strong background in
               general dentistry and oral medicine, she is committed to advancing
               the field through her research on epigenetic and nutritional risk
