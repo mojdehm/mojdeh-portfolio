@@ -16,28 +16,19 @@
             />
           </div>
           <div class="md:w-2/3 md:pl-8">
-            <h2 class="text-2xl font-bold mb-4">Introduction</h2>
-            <p class="mb-4">
-              Mojdeh is a dedicated Ph.D. student specializing in
-              orofacial pain and jaw function. With a strong background in
-              general dentistry and oral medicine, she is committed to advancing
-              the field through her research on epigenetic and nutritional risk
-              factors for painful temporomandibular disorders.
-            </p>
-            <a href="research" class="text-blue-500 hover:underline"
-              >Read more about my research</a
+            <h2 class="text-2xl font-bold mb-4">{{ data?.data?.['main-section'].title }}</h2>
+            <p class="pb-2" v-for="(p, index) in data?.data?.['main-section'].content" :key="index">{{ p }}</p>
+            <a
+              @click="() => push({ name: 'about' })"
+              class="text-blue-500 text-sm cursor-pointer"
+              >Read more ...</a
             >
           </div>
         </div>
       </div>
-      <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-4">Current Research</h2>
-        <p>
-          As a Ph.D. student at Aarhus University, Mojdeh is focused on
-          exploring the epigenetic and nutritional risk factors for painful
-          temporomandibular disorders. Her research aims to identify potential
-          preventive measures and treatments for these conditions.
-        </p>
+      <div v-for="(section, index) in data?.data?.sections" :key="index" class="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">{{ section.title }}</h2>
+        <p class="pb-2" v-for="(p, index) in section.content" :key="index">{{ p }}</p>
       </div>
       <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
         <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
@@ -79,10 +70,16 @@
 </template>
 
 <script setup lang="ts">
-import profilePhoto from "../assets/images/mojdeh.jpeg"
-import linkedin from "../assets/images/linkedin.png"
-import scholar from "../assets/images/scholar.png"
-import orcid from "../assets/images/orcid.svg"
-import rgate from "../assets/images/rgate.png"
+import profilePhoto from "../assets/images/mojdeh.jpeg";
+import linkedin from "../assets/images/linkedin.png";
+import scholar from "../assets/images/scholar.png";
+import orcid from "../assets/images/orcid.svg";
+import rgate from "../assets/images/rgate.png";
+import { useRouter } from "vue-router";
+import { useService } from "@/service";
+
+const { push } = useRouter();
+
+const { data } = useService("home");
 
 </script>

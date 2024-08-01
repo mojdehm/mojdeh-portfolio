@@ -9,7 +9,7 @@
       <v-btn
         :href="cvPdf"
         download="mojdeh_mansoori_cv.pdf"
-        class="md:fixed md:top-10 ml-5 text-xs mt-5 font-bold"
+        class="ml-5 text-xs mt-5 font-bold"
         target="_blank"
         text="PDF"
         variant="tonal"

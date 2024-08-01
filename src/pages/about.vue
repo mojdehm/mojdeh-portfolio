@@ -6,23 +6,18 @@
       </div>
     </header>
     <main class="container mx-auto px-4 py-8">
-      <div class="bg-white rounded-lg shadow-lg p-6">
-        <h2 class="text-2xl font-bold mb-4">Biography</h2>
-        <p>
-          Mojdeh is a Ph.D. student at the Section for Orofacial Pain
-          and Jaw Function, Department of Dentistry and Oral Health, Aarhus
-          University, Denmark. She obtained her general dentistry qualification
-          in 2012 and pursued advanced studies in oral medicine, graduating as
-          the top-ranked student in 2017.
-        </p>
-        <p>
-          She practiced as a clinical professional at Bahonar Hospital and
-          Roshon Dental Clinic in Kerman, Iran, treating patients with oral
-          mucosal diseases, orofacial pain, and temporomandibular disorders.
-          Currently, she is researching epigenetic and nutritional risk factors
-          for painful temporomandibular disorders.
+      <div v-for="(section, index) in data?.data?.sections" :key="index" class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold mb-4">{{ section.title }}</h2>
+        <p class="pb-2" v-for="(p, index) in section.content" :key="index">
+          {{ p }}
         </p>
       </div>
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useService } from "@/service";
+
+const { data } = useService("about");
+</script>
