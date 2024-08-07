@@ -6,6 +6,7 @@ import Contact from '../pages/contact.vue'
 import Publications from '../pages/publications.vue'
 import Research from '../pages/research.vue'
 import Resume from '../pages/resume.vue'
+import Posters from '../pages/posters.vue'
 
 const routes = [
   { name: 'home', path: '/', component: Home },
@@ -14,6 +15,7 @@ const routes = [
   { name: 'publications', path: '/publications', component: Publications },
   { name: 'research', path: '/research', component: Research },
   { name: 'resume', path: '/resume', component: Resume },
+  { name: 'posters', path: '/posters', component: Posters },
 ]
 
 const router = createRouter({

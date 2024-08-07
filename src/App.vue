@@ -47,6 +47,11 @@
                 @click="push('/research')"
               ></v-list-item>
               <v-list-item
+                prepend-icon="web"
+                title="Posters"
+                @click="push({name: 'posters'})"
+              ></v-list-item>
+              <v-list-item
                 prepend-icon="co_present"
                 title="Resume"
                 @click="push('/resume')"

@@ -15,6 +15,7 @@
     "core-js": "^3.37.1",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
+    "vue-pdf-embed": "^2.1.0",
     "vuetify": "^3.6.11"
   },
   "devDependencies": {
