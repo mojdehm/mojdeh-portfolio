@@ -2,7 +2,7 @@
   <div>
     <header class="bg-white shadow">
       <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold">Mojdeh Mansoori, Ph.D. Student</h1>
+        <h1 class="text-3xl font-bold">Mojdeh Mansoori</h1>
       </div>
     </header>
     <main class="container mx-auto px-4 py-8">
