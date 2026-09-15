@@ -17,40 +17,15 @@
 
       <v-list density="compact" nav>
         <v-list-item
-          prepend-icon="home"
-          title="Home"
-          @click="push('/')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="publish"
-          title="Publications"
-          @click="push('/publications')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="science"
-          title="Research"
-          @click="push('/research')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="web"
-          title="Posters"
-          @click="push({name: 'posters'})"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="co_present"
-          title="Resume"
-          @click="push('/resume')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="person"
-          title="About me"
-          @click="push('/about')"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="message"
-          title="Contact me"
-          @click="push('/contact')"
-        ></v-list-item>
+          v-for="item in navItems"
+          :key="item.label"
+          @click="push(item.to)"
+        >
+          <div :class="mobile ? 'd-flex flex-column align-center' : 'd-flex align-center'">
+            <v-icon :icon="item.icon" :size="mobile ? 20 : 22" :class="mobile ? '' : 'mr-3'"></v-icon>
+            <span :class="mobile ? 'nav-caption' : ''">{{ item.label }}</span>
+          </div>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -67,4 +42,24 @@ import { useRouter } from "vue-router";
 
 const { push } = useRouter();
 const { mobile } = useDisplay();
+
+const navItems = [
+  { icon: "home", label: "Home", to: "/" },
+  { icon: "publish", label: "Publications", to: "/publications" },
+  { icon: "science", label: "Research", to: "/research" },
+  { icon: "web", label: "Posters", to: { name: "posters" } },
+  { icon: "co_present", label: "Resume", to: "/resume" },
+  { icon: "person", label: "About me", to: "/about" },
+  { icon: "message", label: "Contact me", to: "/contact" },
+];
 </script>
+
+<style scoped>
+.nav-caption {
+  font-size: 9px;
+  line-height: 1.1;
+  margin-top: 2px;
+  text-align: center;
+  white-space: normal;
+}
+</style>
