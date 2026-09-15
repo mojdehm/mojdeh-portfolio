@@ -32,20 +32,20 @@
         <h2 class="text-xl font-bold mb-4">Past Conference Posters</h2>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <p class="text-sm text-gray-500">Departmental Research Day, 24 April 2023</p>
+          <p class="text-sm text-gray-500">IASP World Congress, 2024</p>
           <h3 class="text-lg font-semibold">
-            Dietary quality in adolescents as a risk factor for painful temporomandibular disorders
-            and headache in young adult members of the Danish National Birth Cohort
+            Association between Pre-Adolescent Spinal Pain and Painful Temporomandibular Disorders
+            in Young Adulthood
           </h3>
           <v-btn
-            :href="researchDay2023"
-            download="Mansoori_ResearchDay2023_poster.pdf"
+            :href="iasp2024"
+            download="Mansoori_IASP2024_poster.pdf"
             class="mt-3 text-xs font-bold"
             target="_blank"
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="researchDay2023" class="poster-frame mt-4" title="Research Day 2023 poster"></iframe>
+          <iframe :src="iasp2024" class="poster-frame mt-4" title="IASP 2024 poster"></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -65,20 +65,20 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <p class="text-sm text-gray-500">IASP World Congress, 2024</p>
+          <p class="text-sm text-gray-500">Departmental Research Day, 24 April 2023</p>
           <h3 class="text-lg font-semibold">
-            Association between Pre-Adolescent Spinal Pain and Painful Temporomandibular Disorders
-            in Young Adulthood
+            Dietary quality in adolescents as a risk factor for painful temporomandibular disorders
+            and headache in young adult members of the Danish National Birth Cohort
           </h3>
           <v-btn
-            :href="iasp2024"
-            download="Mansoori_IASP2024_poster.pdf"
+            :href="researchDay2023"
+            download="Mansoori_ResearchDay2023_poster.pdf"
             class="mt-3 text-xs font-bold"
             target="_blank"
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="iasp2024" class="poster-frame mt-4" title="IASP 2024 poster"></iframe>
+          <iframe :src="researchDay2023" class="poster-frame mt-4" title="Research Day 2023 poster"></iframe>
         </div>
       </section>
     </main>
