@@ -1,65 +1,93 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      permanent
-      :rail="mobile"
-      rail-width="56"
-      width="220"
-    >
-      <v-list-item
-        class="pl-4 pt-4"
-        :prepend-avatar="profilePhoto"
-        title="Mojdeh Mansoori"
-        nav
-      ></v-list-item>
+    <v-main>
+      <v-card>
+        <v-layout>
+          <v-navigation-drawer
+            v-model="drawer"
+            :rail="rail"
+            permanent
+            @click="rail = false"
+            rail-width="60"
+            width="220"
+          >
+            <v-list-item
+              class="pl-4 pt-4"
+              :prepend-avatar="profilePhoto"
+              title="Mojdeh Mansoori"
+              nav
+            >
+              <template #append>
+                <v-btn
+                  width="30"
+                  height="30"
+                  icon="chevron_left"
+                  variant="text"
+                  @click.stop="rail = !rail"
+                ></v-btn>
+              </template>
+            </v-list-item>
 
-      <v-divider></v-divider>
+            <v-divider></v-divider>
 
-      <v-list density="compact" nav>
-        <v-list-item
-          v-for="item in navItems"
-          :key="item.label"
-          @click="push(item.to)"
-        >
-          <div :class="mobile ? 'd-flex flex-column align-center' : 'd-flex align-center'">
-            <v-icon :icon="item.icon" :size="mobile ? 20 : 22" :class="mobile ? '' : 'mr-3'"></v-icon>
-            <span :class="mobile ? 'nav-caption' : ''">{{ item.label }}</span>
-          </div>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-main class="bg-gray-100 text-gray-800">
-      <router-view />
+            <v-list density="compact" nav>
+              <v-list-item
+                prepend-icon="home"
+                title="Home"
+                @click="push('/')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="publish"
+                title="Publications"
+                @click="push('/publications')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="science"
+                title="Research"
+                @click="push('/research')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="web"
+                title="Posters"
+                @click="push({name: 'posters'})"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="co_present"
+                title="Resume"
+                @click="push('/resume')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="person"
+                title="About me"
+                @click="push('/about')"
+              ></v-list-item>
+              <v-list-item
+                prepend-icon="message"
+                title="Contact me"
+                @click="push('/contact')"
+              ></v-list-item>
+            </v-list>
+          </v-navigation-drawer>
+          <v-main class="h-screen overflow-auto bg-gray-100 text-gray-800">
+            <div
+              @click.stop="rail = true"
+              class="w-[calc(100vw-60px)] md:w-full min-h-screen"
+            >
+              <router-view />
+            </div>
+          </v-main>
+        </v-layout>
+      </v-card>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts" setup>
-import { useDisplay } from "vuetify";
+import { ref } from "vue";
 import profilePhoto from "./assets/images/mojdeh.jpeg";
 import { useRouter } from "vue-router";
 
 const { push } = useRouter();
-const { mobile } = useDisplay();
-
-const navItems = [
-  { icon: "home", label: "Home", to: "/" },
-  { icon: "publish", label: "Publications", to: "/publications" },
-  { icon: "science", label: "Research", to: "/research" },
-  { icon: "web", label: "Posters", to: { name: "posters" } },
-  { icon: "co_present", label: "Resume", to: "/resume" },
-  { icon: "person", label: "About me", to: "/about" },
-  { icon: "message", label: "Contact me", to: "/contact" },
-];
+const drawer = ref(true);
+const rail = ref(true);
 </script>
-
-<style scoped>
-.nav-caption {
-  font-size: 9px;
-  line-height: 1.1;
-  margin-top: 2px;
-  text-align: center;
-  white-space: normal;
-}
-</style>
