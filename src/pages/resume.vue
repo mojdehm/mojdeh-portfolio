@@ -37,15 +37,6 @@
     </section>
 
     <section class="cv-section">
-      <h2>Research interests</h2>
-      <ul>
-        <li>Early-life and lifestyle-related risk factors for painful temporomandibular disorders and headache</li>
-        <li>Multidimensional clinical characterization of p-TMD (pain, psychosocial, somatosensory, lifestyle)</li>
-        <li>Translational approaches linking experimental, clinical, and registry-based pain research</li>
-      </ul>
-    </section>
-
-    <section class="cv-section">
       <h2>Positions</h2>
       <div v-for="(p, index) in data?.data?.positions" :key="'position-' + index" class="cv-block">
         <p class="cv-date">{{ p.date }}</p>
