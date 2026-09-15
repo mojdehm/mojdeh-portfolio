@@ -68,7 +68,10 @@
               ></v-list-item>
             </v-list>
           </v-navigation-drawer>
-          <v-main class="h-screen overflow-auto bg-gray-100 text-gray-800">
+          <v-main
+            @scroll="rail = true"
+            class="h-screen overflow-auto bg-gray-100 text-gray-800"
+          >
             <div
               @click.stop="rail = true"
               class="w-[calc(100vw-60px)] md:w-full min-h-screen"
