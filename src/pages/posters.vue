@@ -7,7 +7,7 @@
     </header>
     <main class="mx-auto px-4 py-8 max-w-5xl">
       <section class="mb-10">
-        <h2 class="text-xl font-bold mb-1">Upcoming Conference — EAOPD 2026</h2>
+        <h2 class="text-xl font-bold mb-1">EAOPD 2026</h2>
         <p class="text-sm text-gray-600 mb-4">
           Athens, Greece, 18–19 September 2026. Scanned the QR code on the poster? Here it is.
         </p>
