@@ -24,7 +24,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="eaopd2026" class="poster-frame mt-4" title="EAOPD 2026 poster"></iframe>
+          <iframe :src="eaopd2026 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" title="EAOPD 2026 poster"></iframe>
         </div>
       </section>
 
@@ -45,7 +45,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="iasp2024" class="poster-frame mt-4" title="IASP 2024 poster"></iframe>
+          <iframe :src="iasp2024 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" title="IASP 2024 poster"></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -61,7 +61,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="eaopd2023" class="poster-frame mt-4" title="EAOPD 2023 poster"></iframe>
+          <iframe :src="eaopd2023 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" title="EAOPD 2023 poster"></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6">
@@ -78,7 +78,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <iframe :src="researchDay2023" class="poster-frame mt-4" title="Research Day 2023 poster"></iframe>
+          <iframe :src="researchDay2023 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" title="Research Day 2023 poster"></iframe>
         </div>
       </section>
     </main>
@@ -95,8 +95,8 @@ import iasp2024 from "../assets/posters/iasp2024.pdf";
 <style scoped>
 .poster-frame {
   width: 100%;
-  height: 80vh;
-  min-height: 500px;
+  aspect-ratio: 1.41 / 1;
+  max-height: 85vh;
   border: 1px solid #e5e7eb;
   border-radius: 4px;
 }
