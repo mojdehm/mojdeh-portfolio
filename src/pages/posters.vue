@@ -24,7 +24,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <VuePdfEmbed :source="eaopd2026" class="mt-4" />
+          <iframe :src="eaopd2026" class="poster-frame mt-4" title="EAOPD 2026 poster"></iframe>
         </div>
       </section>
 
@@ -45,7 +45,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <VuePdfEmbed :source="researchDay2023" class="mt-4" />
+          <iframe :src="researchDay2023" class="poster-frame mt-4" title="Research Day 2023 poster"></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -61,7 +61,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <VuePdfEmbed :source="eaopd2023" class="mt-4" />
+          <iframe :src="eaopd2023" class="poster-frame mt-4" title="EAOPD 2023 poster"></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6">
@@ -78,7 +78,7 @@
             text="Download PDF"
             variant="tonal"
           />
-          <VuePdfEmbed :source="iasp2024" class="mt-4" />
+          <iframe :src="iasp2024" class="poster-frame mt-4" title="IASP 2024 poster"></iframe>
         </div>
       </section>
     </main>
@@ -86,9 +86,18 @@
 </template>
 
 <script setup lang="ts">
-import VuePdfEmbed from "vue-pdf-embed";
 import eaopd2026 from "../assets/posters/eaopd2026.pdf";
 import researchDay2023 from "../assets/posters/research-day-2023.pdf";
 import eaopd2023 from "../assets/posters/eaopd2023.pdf";
 import iasp2024 from "../assets/posters/iasp2024.pdf";
 </script>
+
+<style scoped>
+.poster-frame {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+</style>
