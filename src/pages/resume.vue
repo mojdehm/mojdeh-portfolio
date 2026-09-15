@@ -151,7 +151,7 @@ hr { border: none; border-top: 2px solid var(--accent); margin: 1.25rem 0; }
   margin: 0 0 0.5rem;
 }
 .cv-section p { margin: 0.25rem 0; }
-.cv-section ul { margin: 0.25rem 0; padding-left: 1.2rem; }
+.cv-section ul { margin: 0.25rem 0; padding-left: 0; list-style: none; }
 .cv-section li { margin: 0.15rem 0; }
 .cv-block { margin-bottom: 0.6rem; }
 .cv-date, .cv-role { font-weight: bold; margin: 0.1rem 0; }
