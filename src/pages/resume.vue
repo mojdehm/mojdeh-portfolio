@@ -33,7 +33,7 @@
 
     <section class="cv-section">
       <h2>Research identity</h2>
-      <p>Postdoctoral researcher in orofacial pain, with a focus on epidemiological and clinical studies of painful temporomandibular disorder (p-TMD), early-life risk factors, and pain epidemiology.</p>
+      <p>{{ data?.data?.profile }}</p>
     </section>
 
     <section class="cv-section">
@@ -51,11 +51,7 @@
         <p class="cv-date">{{ p.date }}</p>
         <p class="cv-role">{{ p.role }}</p>
         <p class="cv-muted">{{ p.org }}</p>
-        <p v-if="p.detail" class="cv-muted">{{ p.detail }}</p>
-      </div>
-      <div class="cv-block">
-        <p class="cv-muted indent">Supervisor: Prof. Lene Baad-Hansen, Aarhus University</p>
-        <p class="cv-muted indent">Co-supervisors: Prof. Bodil Hammer Bech, Aarhus University; Prof. Luda Diatchenko, McGill University</p>
+        <p v-for="(n, ni) in p.notes" :key="'position-' + index + '-note-' + ni" class="cv-muted indent">{{ n }}</p>
       </div>
     </section>
 
@@ -64,7 +60,7 @@
       <div v-for="(e, index) in data?.data?.education" :key="'edu-' + index" class="cv-block">
         <p class="cv-role">{{ e.content }}</p>
         <p v-if="e.org" class="cv-muted">{{ e.org }}</p>
-        <p v-if="e.detail" class="cv-muted">{{ e.detail }}</p>
+        <p v-for="(n, ni) in e.notes" :key="'edu-' + index + '-note-' + ni" class="cv-muted">{{ n }}</p>
       </div>
     </section>
 
