@@ -16,15 +16,32 @@
             Multidomain phenotyping of painful temporomandibular disorders in young adults from the
             Danish National Birth Cohort
           </h3>
-          <v-btn
-            :href="eaopd2026"
-            download="Mansoori_EAOPD2026_poster.pdf"
-            class="mt-3 text-xs font-bold"
-            target="_blank"
-            text="Download PDF"
-            variant="tonal"
-          />
-          <iframe :src="eaopd2026 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" style="aspect-ratio: 2384.04 / 3370.32" title="EAOPD 2026 poster"></iframe>
+          <div class="flex gap-3 flex-wrap mt-3">
+            <v-btn
+              v-if="mobile"
+              :href="eaopd2026"
+              class="text-xs font-bold"
+              target="_blank"
+              text="View poster"
+              variant="flat"
+              color="primary"
+            />
+            <v-btn
+              :href="eaopd2026"
+              download="Mansoori_EAOPD2026_poster.pdf"
+              class="text-xs font-bold"
+              target="_blank"
+              text="Download PDF"
+              variant="tonal"
+            />
+          </div>
+          <iframe
+            v-if="!mobile"
+            :src="eaopd2026 + '#toolbar=0&view=Fit'"
+            class="poster-frame mt-4"
+            style="aspect-ratio: 2384.04 / 3370.32"
+            title="EAOPD 2026 poster"
+          ></iframe>
         </div>
       </section>
 
@@ -37,15 +54,32 @@
             Association between Pre-Adolescent Spinal Pain and Painful Temporomandibular Disorders
             in Young Adulthood
           </h3>
-          <v-btn
-            :href="iasp2024"
-            download="Mansoori_IASP2024_poster.pdf"
-            class="mt-3 text-xs font-bold"
-            target="_blank"
-            text="Download PDF"
-            variant="tonal"
-          />
-          <iframe :src="iasp2024 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" style="aspect-ratio: 4025.28 / 2239.32" title="IASP 2024 poster"></iframe>
+          <div class="flex gap-3 flex-wrap mt-3">
+            <v-btn
+              v-if="mobile"
+              :href="iasp2024"
+              class="text-xs font-bold"
+              target="_blank"
+              text="View poster"
+              variant="flat"
+              color="primary"
+            />
+            <v-btn
+              :href="iasp2024"
+              download="Mansoori_IASP2024_poster.pdf"
+              class="text-xs font-bold"
+              target="_blank"
+              text="Download PDF"
+              variant="tonal"
+            />
+          </div>
+          <iframe
+            v-if="!mobile"
+            :src="iasp2024 + '#toolbar=0&view=Fit'"
+            class="poster-frame mt-4"
+            style="aspect-ratio: 4025.28 / 2239.32"
+            title="IASP 2024 poster"
+          ></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -53,15 +87,32 @@
           <h3 class="text-lg font-semibold">
             Adolescent Dietary Quality as a Risk Factor for Painful TMD & Headaches in Young Adults
           </h3>
-          <v-btn
-            :href="eaopd2023"
-            download="Mansoori_EAOPD2023_poster.pdf"
-            class="mt-3 text-xs font-bold"
-            target="_blank"
-            text="Download PDF"
-            variant="tonal"
-          />
-          <iframe :src="eaopd2023 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" style="aspect-ratio: 2551.08 / 3401.64" title="EAOPD 2023 poster"></iframe>
+          <div class="flex gap-3 flex-wrap mt-3">
+            <v-btn
+              v-if="mobile"
+              :href="eaopd2023"
+              class="text-xs font-bold"
+              target="_blank"
+              text="View poster"
+              variant="flat"
+              color="primary"
+            />
+            <v-btn
+              :href="eaopd2023"
+              download="Mansoori_EAOPD2023_poster.pdf"
+              class="text-xs font-bold"
+              target="_blank"
+              text="Download PDF"
+              variant="tonal"
+            />
+          </div>
+          <iframe
+            v-if="!mobile"
+            :src="eaopd2023 + '#toolbar=0&view=Fit'"
+            class="poster-frame mt-4"
+            style="aspect-ratio: 2551.08 / 3401.64"
+            title="EAOPD 2023 poster"
+          ></iframe>
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6">
@@ -70,15 +121,32 @@
             Dietary quality in adolescents as a risk factor for painful temporomandibular disorders
             and headache in young adult members of the Danish National Birth Cohort
           </h3>
-          <v-btn
-            :href="researchDay2023"
-            download="Mansoori_ResearchDay2023_poster.pdf"
-            class="mt-3 text-xs font-bold"
-            target="_blank"
-            text="Download PDF"
-            variant="tonal"
-          />
-          <iframe :src="researchDay2023 + '#toolbar=0&view=Fit'" class="poster-frame mt-4" style="aspect-ratio: 540 / 720" title="Research Day 2023 poster"></iframe>
+          <div class="flex gap-3 flex-wrap mt-3">
+            <v-btn
+              v-if="mobile"
+              :href="researchDay2023"
+              class="text-xs font-bold"
+              target="_blank"
+              text="View poster"
+              variant="flat"
+              color="primary"
+            />
+            <v-btn
+              :href="researchDay2023"
+              download="Mansoori_ResearchDay2023_poster.pdf"
+              class="text-xs font-bold"
+              target="_blank"
+              text="Download PDF"
+              variant="tonal"
+            />
+          </div>
+          <iframe
+            v-if="!mobile"
+            :src="researchDay2023 + '#toolbar=0&view=Fit'"
+            class="poster-frame mt-4"
+            style="aspect-ratio: 540 / 720"
+            title="Research Day 2023 poster"
+          ></iframe>
         </div>
       </section>
     </main>
@@ -86,10 +154,13 @@
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from "vuetify";
 import eaopd2026 from "../assets/posters/eaopd2026.pdf";
 import researchDay2023 from "../assets/posters/research-day-2023.pdf";
 import eaopd2023 from "../assets/posters/eaopd2023.pdf";
 import iasp2024 from "../assets/posters/iasp2024.pdf";
+
+const { mobile } = useDisplay();
 </script>
 
 <style scoped>
