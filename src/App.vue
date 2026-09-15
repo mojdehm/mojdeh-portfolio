@@ -89,7 +89,7 @@ import { useRouter } from "vue-router";
 
 const { push } = useRouter();
 const drawer = ref(true);
-const rail = ref(true);
+const rail = ref(false);
 
 function navigate(route: string | { name: string }) {
   push(route);
