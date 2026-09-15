@@ -1,14 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar v-if="mobile" density="compact" color="white" elevation="1">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Mojdeh Mansoori</v-toolbar-title>
-    </v-app-bar>
-
     <v-navigation-drawer
-      v-model="drawer"
-      :permanent="!mobile"
-      :temporary="mobile"
+      permanent
+      :rail="mobile"
+      rail-width="56"
       width="220"
     >
       <v-list-item
@@ -24,37 +19,37 @@
         <v-list-item
           prepend-icon="home"
           title="Home"
-          @click="navigate('/')"
+          @click="push('/')"
         ></v-list-item>
         <v-list-item
           prepend-icon="publish"
           title="Publications"
-          @click="navigate('/publications')"
+          @click="push('/publications')"
         ></v-list-item>
         <v-list-item
           prepend-icon="science"
           title="Research"
-          @click="navigate('/research')"
+          @click="push('/research')"
         ></v-list-item>
         <v-list-item
           prepend-icon="web"
           title="Posters"
-          @click="navigate({name: 'posters'})"
+          @click="push({name: 'posters'})"
         ></v-list-item>
         <v-list-item
           prepend-icon="co_present"
           title="Resume"
-          @click="navigate('/resume')"
+          @click="push('/resume')"
         ></v-list-item>
         <v-list-item
           prepend-icon="person"
           title="About me"
-          @click="navigate('/about')"
+          @click="push('/about')"
         ></v-list-item>
         <v-list-item
           prepend-icon="message"
           title="Contact me"
-          @click="navigate('/contact')"
+          @click="push('/contact')"
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -66,23 +61,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
 import { useDisplay } from "vuetify";
 import profilePhoto from "./assets/images/mojdeh.jpeg";
 import { useRouter } from "vue-router";
 
 const { push } = useRouter();
 const { mobile } = useDisplay();
-const drawer = ref(!mobile.value);
-
-watch(mobile, (isMobile) => {
-  drawer.value = !isMobile;
-});
-
-function navigate(route: string | { name: string }) {
-  push(route);
-  if (mobile.value) {
-    drawer.value = false;
-  }
-}
 </script>
