@@ -34,37 +34,37 @@
               <v-list-item
                 prepend-icon="home"
                 title="Home"
-                @click="push('/')"
+                @click.stop="navigate('/')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="publish"
                 title="Publications"
-                @click="push('/publications')"
+                @click.stop="navigate('/publications')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="science"
                 title="Research"
-                @click="push('/research')"
+                @click.stop="navigate('/research')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="web"
                 title="Posters"
-                @click="push({name: 'posters'})"
+                @click.stop="navigate({name: 'posters'})"
               ></v-list-item>
               <v-list-item
                 prepend-icon="co_present"
                 title="Resume"
-                @click="push('/resume')"
+                @click.stop="navigate('/resume')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="person"
                 title="About me"
-                @click="push('/about')"
+                @click.stop="navigate('/about')"
               ></v-list-item>
               <v-list-item
                 prepend-icon="message"
                 title="Contact me"
-                @click="push('/contact')"
+                @click.stop="navigate('/contact')"
               ></v-list-item>
             </v-list>
           </v-navigation-drawer>
@@ -90,4 +90,9 @@ import { useRouter } from "vue-router";
 const { push } = useRouter();
 const drawer = ref(true);
 const rail = ref(true);
+
+function navigate(route: string | { name: string }) {
+  push(route);
+  rail.value = true;
+}
 </script>
