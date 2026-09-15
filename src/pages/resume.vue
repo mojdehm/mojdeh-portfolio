@@ -42,7 +42,7 @@
         <p class="cv-date">{{ p.date }}</p>
         <p class="cv-role">{{ p.role }}</p>
         <p class="cv-muted">{{ p.org }}</p>
-        <p v-for="(n, ni) in p.notes" :key="'position-' + index + '-note-' + ni" class="cv-muted indent">{{ n }}</p>
+        <p v-for="(n, ni) in p.notes" :key="'position-' + index + '-note-' + ni" class="cv-muted">{{ n }}</p>
       </div>
     </section>
 
@@ -156,5 +156,4 @@ hr { border: none; border-top: 2px solid var(--accent); margin: 1.25rem 0; }
 .cv-block { margin-bottom: 0.6rem; }
 .cv-date, .cv-role { font-weight: bold; margin: 0.1rem 0; }
 .cv-muted { color: #444; font-size: 0.88rem; }
-.indent { padding-left: 1rem; }
 </style>
