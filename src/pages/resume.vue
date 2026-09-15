@@ -1,35 +1,48 @@
 <template>
   <div class="cv-page">
-    <div class="cv-header">
-      <div>
-        <h1 class="cv-name">Mojdeh Mansoori<span class="cv-suffix">, DDS, MSc, PhD</span></h1>
-        <p class="cv-subtitle">Postdoctoral Researcher — Orofacial Pain and Jaw Function</p>
+    <div class="header">
+      <div class="header-text">
+        <h1>Mojdeh Mansoori<span class="suffix">, DDS, MSc, PhD</span></h1>
+        <p class="subtitle">Postdoctoral Researcher</p>
+        <div class="contact">
+          <p>Section for Orofacial Pain and Jaw Function</p>
+          <p>Department of Dentistry and Oral Health, Aarhus University, Denmark</p>
+          <p>Email: mojdeh.m@dent.au.dk | Mobile: +45 53 33 61 70</p>
+          <p class="links">
+            <a href="https://scholar.google.com/citations?hl=en&user=AFLXxBMAAAAJ" target="_blank">Google Scholar</a>
+            <a href="https://orcid.org/0000-0001-9026-7590" target="_blank">ORCID</a>
+            <a href="https://www.linkedin.com/in/mojdeh-mansoori-3a258482/" target="_blank">LinkedIn</a>
+            <a href="https://www.researchgate.net/profile/Mojdeh-Mansoori" target="_blank">ResearchGate</a>
+            <a href="https://www.mojdeh.dk/" target="_blank">Academic website</a>
+          </p>
+        </div>
       </div>
-      <v-btn
-        :href="cvPdf"
-        download="mojdeh_mansoori_cv.pdf"
-        class="cv-download"
-        target="_blank"
-        text="Download PDF"
-        variant="tonal"
-      />
+      <img class="photo" :src="resumePhoto" alt="Mojdeh Mansoori" />
     </div>
 
-    <div class="cv-contact">
-      <p>Section for Orofacial Pain and Jaw Function, Department of Dentistry and Oral Health, Aarhus University, Denmark</p>
-      <p>Email: mojdeh.m@dent.au.dk | Phone: 53336170</p>
-      <p class="cv-links">
-        <a href="https://scholar.google.com/citations?hl=en&user=AFLXxBMAAAAJ" target="_blank">Google Scholar</a> |
-        <a href="https://orcid.org/0000-0001-9026-7590" target="_blank">ORCID</a> |
-        <a href="https://www.linkedin.com/in/mojdeh-mansoori-3a258482/" target="_blank">LinkedIn</a> |
-        <a href="https://www.researchgate.net/profile/Mojdeh-Mansoori" target="_blank">ResearchGate</a> |
-        <a href="https://www.mojdeh.dk/" target="_blank">Academic website</a>
-      </p>
-    </div>
+    <v-btn
+      :href="cvPdf"
+      download="mojdeh_mansoori_cv.pdf"
+      class="cv-download"
+      target="_blank"
+      text="Download PDF"
+      variant="tonal"
+    />
+
+    <hr />
 
     <section class="cv-section">
-      <h2>Research profile</h2>
-      <p>{{ data?.data?.profile }}</p>
+      <h2>Research identity</h2>
+      <p>Postdoctoral researcher in orofacial pain, with a focus on epidemiological and clinical studies of painful temporomandibular disorder (p-TMD), early-life risk factors, and pain epidemiology.</p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Research interests</h2>
+      <ul>
+        <li>Early-life and lifestyle-related risk factors for painful temporomandibular disorders and headache</li>
+        <li>Multidimensional clinical characterization of p-TMD (pain, psychosocial, somatosensory, lifestyle)</li>
+        <li>Translational approaches linking experimental, clinical, and registry-based pain research</li>
+      </ul>
     </section>
 
     <section class="cv-section">
@@ -40,6 +53,19 @@
         <p class="cv-muted">{{ p.org }}</p>
         <p v-if="p.detail" class="cv-muted">{{ p.detail }}</p>
       </div>
+      <div class="cv-block">
+        <p class="cv-muted indent">Supervisor: Prof. Lene Baad-Hansen, Aarhus University</p>
+        <p class="cv-muted indent">Co-supervisors: Prof. Bodil Hammer Bech, Aarhus University; Prof. Luda Diatchenko, McGill University</p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <div v-for="(e, index) in data?.data?.education" :key="'edu-' + index" class="cv-block">
+        <p class="cv-role">{{ e.content }}</p>
+        <p v-if="e.org" class="cv-muted">{{ e.org }}</p>
+        <p v-if="e.detail" class="cv-muted">{{ e.detail }}</p>
+      </div>
     </section>
 
     <section class="cv-section">
@@ -48,41 +74,29 @@
     </section>
 
     <section class="cv-section">
-      <h2>Research methods and analytical skills</h2>
+      <h2>Teaching and scientific dissemination</h2>
+      <p><strong>International conferences:</strong></p>
+      <ul>
+        <li v-for="(c, index) in data?.data?.conferences" :key="'conf-' + index">{{ c }}</li>
+      </ul>
+      <p><strong>Teaching:</strong></p>
+      <ul>
+        <li v-for="(t, index) in data?.data?.teaching" :key="'teaching-' + index">
+          {{ t.content }}<span v-if="t.org">, {{ t.org }}</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Research methods and skills</h2>
       <ul>
         <li v-for="(s, index) in data?.data?.skills" :key="'skill-' + index">{{ s }}</li>
       </ul>
     </section>
 
     <section class="cv-section">
-      <h2>Teaching experience</h2>
-      <div v-for="(t, index) in data?.data?.teaching" :key="'teaching-' + index" class="cv-block">
-        <p>{{ t.content }}</p>
-        <p v-if="t.org" class="cv-muted">{{ t.org }}</p>
-      </div>
-    </section>
-
-    <section class="cv-section">
-      <h2>International conferences</h2>
-      <ul>
-        <li v-for="(c, index) in data?.data?.conferences" :key="'conf-' + index">{{ c }}</li>
-      </ul>
-    </section>
-
-    <section class="cv-section">
-      <h2>Education</h2>
-      <div v-for="(e, index) in data?.data?.education" :key="'edu-' + index" class="cv-block">
-        <p>{{ e.content }}</p>
-        <p v-if="e.org" class="cv-muted">{{ e.org }}</p>
-        <p v-if="e.detail" class="cv-muted">{{ e.detail }}</p>
-      </div>
-    </section>
-
-    <section class="cv-section">
-      <h2>Academic service</h2>
-      <ul>
-        <li v-for="(s, index) in data?.data?.service" :key="'service-' + index">{{ s }}</li>
-      </ul>
+      <h2>Peer-review activity</h2>
+      <p v-for="(s, index) in data?.data?.service" :key="'service-' + index">{{ s }}</p>
     </section>
 
     <section class="cv-section">
@@ -96,6 +110,7 @@
 
 <script setup lang="ts">
 import cvPdf from "../assets/cv.pdf";
+import resumePhoto from "../assets/images/resume-photo.jpg";
 import { useService } from "@/service";
 
 const { data } = useService("cv");
@@ -103,80 +118,56 @@ const { data } = useService("cv");
 
 <style scoped>
 .cv-page {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   color: #1a1a1a;
-  max-width: 760px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
   line-height: 1.5;
+  --accent: #a31545;
 }
-.cv-header {
+.header {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
 }
-.cv-name {
-  color: #1d4e89;
-  font-size: 2rem;
-  font-weight: normal;
-  margin: 0;
+.header-text { flex: 1; min-width: 260px; }
+h1 {
+  color: var(--accent);
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: 0 0 0.15rem;
 }
-.cv-suffix {
-  font-size: 1.1rem;
-  color: #1a1a1a;
-}
-.cv-subtitle {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
-}
-.cv-download {
+.suffix { font-size: 1.1rem; color: var(--accent); }
+.subtitle { font-weight: bold; font-size: 1rem; margin: 0.15rem 0 0.6rem; }
+.photo {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
   flex-shrink: 0;
 }
-.cv-contact {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-}
-.cv-contact p {
-  margin: 0.15rem 0;
-}
-.cv-links a {
-  color: #1d4e89;
-  text-decoration: none;
-}
-.cv-links a:hover {
-  text-decoration: underline;
-}
-.cv-section {
-  margin-top: 1.75rem;
-}
+.contact p { margin: 0.1rem 0; font-size: 0.9rem; }
+.links a { color: var(--accent); text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+.links a:not(:last-child)::after { content: " | "; color: #1a1a1a; }
+.cv-download { margin-top: 1rem; }
+hr { border: none; border-top: 2px solid var(--accent); margin: 1.25rem 0; }
+.cv-section { margin-top: 1.5rem; }
 .cv-section h2 {
-  font-size: 1.15rem;
-  font-weight: bold;
-  border-bottom: 1px solid #999;
-  padding-bottom: 0.25rem;
-  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.2rem;
+  margin: 0 0 0.5rem;
 }
-.cv-section p {
-  margin: 0.3rem 0;
-}
-.cv-section ul {
-  margin: 0.3rem 0;
-  padding-left: 1.3rem;
-}
-.cv-section li {
-  margin: 0.2rem 0;
-}
-.cv-block {
-  margin-bottom: 0.75rem;
-}
-.cv-date, .cv-role {
-  font-weight: bold;
-  margin: 0.15rem 0;
-}
-.cv-muted {
-  color: #444;
-  font-size: 0.9rem;
-}
+.cv-section p { margin: 0.25rem 0; }
+.cv-section ul { margin: 0.25rem 0; padding-left: 1.2rem; }
+.cv-section li { margin: 0.15rem 0; }
+.cv-block { margin-bottom: 0.6rem; }
+.cv-date, .cv-role { font-weight: bold; margin: 0.1rem 0; }
+.cv-muted { color: #444; font-size: 0.88rem; }
+.indent { padding-left: 1rem; }
 </style>
